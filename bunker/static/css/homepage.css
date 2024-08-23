@@ -1,9 +1,0 @@
-body {
-    margin: 0; /* Remove qualquer margem padrão */
-    padding: 0; /* Remove qualquer padding padrão */
-    height: 100vh; /* Garante que a altura do body seja 100% da altura da viewport */
-    background-image: url('yorhawallpaper.jpg');
-    background-size: cover; /* Ajusta o tamanho da imagem para cobrir toda a tela */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita a repetição da imagem */
-}
