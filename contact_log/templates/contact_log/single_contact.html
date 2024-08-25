@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'contact_log/css/homepage.css' %}">
+    <title>Contact Log</title>
+</head>
+
+<body>
+
+    {% block content %}
+    <div class="single-contact">
+        <h1 class="single-contact-name">
+        {{ contact.name }} <br>
+        {{ contact.rank }}
+        </h1>
+
+        <p><b>ID:</b> {{ contact.id }}</p>
+        <p><b>E-mail:</b> {{ contact.email }}</p>
+        <p><b>Phone:</b> {{ contact.phone }}</p>
+        <p><b>Created Date:</b> {{ contact.created_date }}</p>
+        <p><b>Description:</b> {{ contact.description }}</p>
+
+        {% comment %} Tentar colocar a imagem do contato aqui no campo
+        ainda não consegui fazer isso
+        {% endcomment %}
+
+        {% comment %} <p><b>Picture:</b> 
+        <img src="{{ imagem.url_imagem }}" alt="{{ imagem.titulo }}"> 
+        {% endcomment %}
+
+    </div>
+    {% endblock content %}
+
+
+</body>
+</html>
