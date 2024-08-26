@@ -2,13 +2,43 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'contact_log/css/homepage.css' %}">
-    <title>Contact Log</title>
-</head>
+
 <body>
+
+    {% include "contact_log/partials/_header.html" %}
+
+    {% if page_obj %}
+
+        <nav class="menu">
+            <ul class="menu-list">
+            <li class="menu-item">
+                <a href="" class="menu-link">
+                Link 1
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="" class="menu-link">
+                Link 2
+                </a>
+            </li>
+        </ul>
+        </nav>
+    
+        <div class="search">
+            <form 
+            action=" {% url "contact_log:search" %} " 
+            method="GET"
+            >
+            <input 
+                type="search" 
+                class="search-input"
+                placeholder="Search"
+                id="search"
+                name="q"
+            >
+            </form>
+        </div>
+        </header>
 
     {% block content %}
     <div class="responsive-table">
@@ -28,7 +58,7 @@
         </thead>
 
         <tbody>
-            {% for contact in contacts %}
+            {% for contact in page_obj %}
                 <tr class="table-row">
                     <td class="table-cel">
                         <a class="table-link"
@@ -54,9 +84,17 @@
             {% endfor %}
         </tbody>
     </table>
+    {% include "contact_log/partials/_pagination.html" %}
 </div>
 
 {% endblock content %}
 
+    {% else %}
+    <div class="single-contact">
+        <h1 class="single-contact-name">
+        No file found.
+        </h1>
+    </div>
+{% endif %}
 </body>
 </html>

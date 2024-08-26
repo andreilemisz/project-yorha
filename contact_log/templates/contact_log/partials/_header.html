@@ -1,0 +1,16 @@
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'contact_log/css/homepage.css' %}">
+    <title>{{ site_title}} - Contact Log</title>
+</head>
+
+<header class="header">
+    <h1 class="header-heading">
+    <a 
+    href="{% url 'contact_log:contact_log_startingpage' %}" class="header-link">
+    Contact Log
+    </a>
+    </h1>
+</header>
